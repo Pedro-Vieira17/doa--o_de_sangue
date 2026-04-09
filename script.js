@@ -19,7 +19,7 @@ document.getElementById("FormularioDoacao").addEventListener("submit", function 
         alert("Digite nome e sobrenome");
         return;
     }
-        if (!email.includes("@")) return alert("Email inválido");
+        if (!email.includes("@")) return alert(" Email inválido");
         if (isNaN(idade) || idade < 16) return alert("Obrigatório ter 16 anos ou mais");
         if (isNaN(peso) || peso < 49) return alert("Peso inválido");
         if (telefone.length < 8 || isNaN(telefone)) return alert("Telefone inválido");
