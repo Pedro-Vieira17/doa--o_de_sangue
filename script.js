@@ -1,3 +1,5 @@
+let doadores = [];
+
 document.getElementById("FormularioDoacao").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -13,31 +15,61 @@ document.getElementById("FormularioDoacao").addEventListener("submit", function 
 
 
 
-    if (nome.length < 3) return alert("Nome inválido (mínimo 3 caracteres)");
-    if (!email.includes("@")) return alert("Email inválido");
-    if (isNaN(idade) || idade < 16) return alert("Obrigatório ter 16 anos ou mais");
-    if (isNaN(peso) || peso < 49) return alert("Peso inválido");
-    if (telefone.length < 8 || isNaN(telefone)) return alert("Telefone inválido");
-    if (cidade === "") return alert("Cidade obrigatória");
-    if (estado === "") return alert("Estado obrigatório");
-    if (isNaN(idade) || idade < 0) return alert("Idade inválida");
-    if (isNaN(peso) || peso < 0) return alert("Peso inválido");
+    if (!nome.includes(" ")) {
+        alert("Digite nome e sobrenome");
+        return;
+    }
+        if (!email.includes("@")) return alert("Email inválido");
+        if (isNaN(idade) || idade < 16) return alert("Obrigatório ter 16 anos ou mais");
+        if (isNaN(peso) || peso < 49) return alert("Peso inválido");
+        if (telefone.length < 8 || isNaN(telefone)) return alert("Telefone inválido");
+        if (isNaN(idade) || idade < 0) return alert("Idade inválida");
+      
 
+        if (cidade === "" || estado === "") {
+            alert("Preencha todos os campos");
+            return;
+        }
 
-    if (horas > 8) {
-        alert("Atenção: o animal ficará muito tempo sozinho!");
+        if (tipo_sangue === "") {
+        alert("Selecione o tipo sanguíneo");
+        return;
+        }
+
+         let regexTelefone = /^[0-9]+$/;
+    if (!regexTelefone.test(telefone)) {
+        alert("Telefone deve conter apenas números");
+        return;
     }
 
+        let doador = {
+            nome: nome,
+            email: email,
+            idade: idade,
+            peso: peso,
+            tipoSanguineo: tipo_sangue,
+            telefone: telefone,
+            cidade: cidade,
+            estado: estado
+        };
 
 
-    document.getElementById("resultado").innerHTML =
-        "✅ Cadastro realizado com sucesso!<br><br>" +
-        "<strong>Nome:</strong> " + nome + "<br>" +
-        "<strong>Email:</strong> " + email + "<br>" +
-        "<strong>Idade:</strong> " + idade + "<br>" +
-        "<strong>Peso:</strong> " + peso + "<br>" +
-        "<strong>Tipo Sanguíneo:</strong> " + tipo_sangue + "<br>" +
-        "<strong>Telefone:</strong> " + telefone + "<br>" +
-        "<strong>Cidade:</strong> " + cidade + "<br>" +
-        "<strong>Estado:</strong> " + estado + "<h>";
-});
+        doadores.push(doador);
+
+        console.log(doadores);
+
+
+
+        document.getElementById("resultado").innerHTML =
+            "✅ Cadastro realizado com sucesso!<br><br>" +
+            "<strong>Nome:</strong> " + nome + "<br>" +
+            "<strong>Email:</strong> " + email + "<br>" +
+            "<strong>Idade:</strong> " + idade + "<br>" +
+            "<strong>Peso:</strong> " + peso + "<br>" +
+            "<strong>Tipo Sanguíneo:</strong> " + tipo_sangue + "<br>" +
+            "<strong>Telefone:</strong> " + telefone + "<br>" +
+            "<strong>Cidade:</strong> " + cidade + "<br>" +
+            "<strong>Estado:</strong> " + estado + "<h>";
+
+        document.getElementById("FormularioDoacao").reset();
+    });
