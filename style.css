@@ -1,0 +1,139 @@
+.formulario {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#FormularioDoacao {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    width: 100%;
+}
+
+textarea,
+select {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 10px;
+    border: 2px solid #c2c2c2;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+
+}
+
+
+
+h2,
+h3 {
+    text-align: center;
+    font-weight: 600;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(224, 222, 222);
+    margin: 0;
+}
+
+.titulo {
+    background-color: #e40101;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+
+
+.subtitulo {
+    background-color: rgb(124, 0, 0);
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-large;
+}
+
+.subtitulo h3 {
+    font-size: medium;
+    margin: 1px;
+}
+
+.mel {
+    width: 60px;
+}
+
+.img_subtitulo {
+    width: 120px;
+}
+
+.text_subtitulo {
+    display: flex;
+    flex-direction: column;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.final {
+    background-color: rgb(124, 0, 0);
+    padding: 20px;
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background-color: #e40101;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 0px;
+}
+
+#gif {
+    right: 0px;
+    bottom: -5px;
+    width: 200px;
+}
